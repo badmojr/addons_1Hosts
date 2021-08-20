@@ -1,1 +1,1 @@
-# addons for 1Hosts
+# addons: 1Hosts
