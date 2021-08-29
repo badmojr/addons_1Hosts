@@ -1,4 +1,4 @@
-## addon (KidSaf): 1Hosts
+## addon (KidSaf)
 Blocks access to sites with adult, pornographic, & risky content.
 
 <table>
