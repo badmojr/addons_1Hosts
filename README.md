@@ -1,6 +1,6 @@
 ## addon (KidSaf)
-Blocks access to sites with adult, pornographic, & risky content.
-
+- Blocks access to sites with adult, pornographic, & risky content.
+  - Should be used as addon/supplement for mini, Lite, Pro, or Xtra.
 <table>
 <thead>
 <tr>
