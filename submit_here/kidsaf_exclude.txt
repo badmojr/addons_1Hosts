@@ -1,1 +1,2 @@
 .reddit.com
+.cdn.dnsv1.com
