@@ -1,4 +1,4 @@
-## KidSaf: 1Hosts
+## 1Hosts (KidSaf)
 - Blocks access to sites with adult, pornographic, & risky content.
   - Should be used as addon/supplement for mini, Lite, Pro, or Xtra.
 <table>
