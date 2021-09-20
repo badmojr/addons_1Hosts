@@ -2,7 +2,7 @@
 .cdn.dnsv1.com
 .tlivecdn.com
 content.jwplatform.com
-dood.la
+.dood.la
 doodstream.com
 .dood.video
 img.doodcdn.com
