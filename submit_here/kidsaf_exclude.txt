@@ -1,3 +1,4 @@
 .reddit.com
 .cdn.dnsv1.com
 .tlivecdn.com
+content.jwplatform.com
