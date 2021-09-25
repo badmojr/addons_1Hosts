@@ -7,3 +7,4 @@ doodstream.com
 .dood.video
 img.doodcdn.com
 www.gaobook.review
+.vidoza.net
