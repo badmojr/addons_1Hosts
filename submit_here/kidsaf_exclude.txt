@@ -9,3 +9,4 @@ img.doodcdn.com
 www.gaobook.review
 .vidoza.net
 .000webhost.com
+.000webhostapp.com
