@@ -3,7 +3,11 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    
+    branches:
+      - main
+    paths:
+     - 'kidSaf/**'
+
 jobs:
   create_release:
     runs-on: ubuntu-latest
