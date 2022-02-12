@@ -1,8 +1,10 @@
 
-### 1Hosts (kidSaf): nsfw
-- Blocks access to sites with adult, pornographic, & risky content.
-  - Should be used as addon/supplement for mini, Lite, Pro, or Xtra.
-<table>
+<h3 align="center"><id="kiSaf"><strong><ins>1Hosts (kidSaf)</ins></strong></h3>
+<pre align="center">
+Blocks access to sites with adult, pornographic, & risky content.
+Should be used as addon/supplement for mini, Lite, Pro, or Xtra.
+</pre>
+<table align="center">
 <thead>
 <tr>
 <th>Client</th>
