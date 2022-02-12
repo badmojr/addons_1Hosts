@@ -1,4 +1,4 @@
-name: del-runs
+name: delete
 
 on:
   workflow_dispatch:
