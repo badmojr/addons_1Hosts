@@ -1,0 +1,25 @@
+name: desize
+on:
+  workflow_dispatch:
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Clone repo
+        run: git clone --mirror https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} repo_gh
+          
+      - name: Clean up
+        run: |
+          curl -fsSL -o bfg.jar https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar && \
+          java -jar bfg.jar --strip-blobs-bigger-than 10K -fs 100M repo_gh && \
+          cd repo_gh && \
+          git reflog expire --expire=now --all && \
+          git gc --prune=now --aggressive --prune=all
+
+      - name: Push
+        run: |
+          cd repo_gh
+          git push origin
+          
