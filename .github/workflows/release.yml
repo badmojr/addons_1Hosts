@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Clone Repo
-        uses: "actions/checkout@v2.3.4"
+        uses: "actions/checkout@v3.3.0"
         with:
           ref: ${{ github.head_ref }}
 
@@ -45,7 +45,7 @@ jobs:
             release/*
 
       - name: Delete older releases
-        uses: dev-drprasad/delete-older-releases@v0.1.0
+        uses: dev-drprasad/delete-older-releases@v0.2.1
         with:
           keep_latest: 1
           delete_tags: true 
