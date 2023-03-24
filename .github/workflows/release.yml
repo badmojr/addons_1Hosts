@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+     - 'kidSaf/**'
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: "actions/checkout@v2.3.4"
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Prep
+        run: |
+          (
+          listFiles() { find "$1" -type f -print; }
+          rm -rf release tmp && mkdir -p $_ release
+          cp -rf kidSaf tmp && cd $_
+          while read -r i; do
+          renamed=$(echo $i |sed 's:\./::g; s:/:_:g')
+          newname=addon-"$renamed"
+          saveLoc="../release/$newname"
+          mv -f $i $saveLoc
+          done < <(listFiles .)
+          cd .. && rm -rf tmp
+          )
+        shell: bash
+
+      - name: Publish
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "addon Lists"
+          files: |
+            release/*
+
+      - name: Delete older releases
+        uses: dev-drprasad/delete-older-releases@v0.1.0
+        with:
+          keep_latest: 1
+          delete_tags: true 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          

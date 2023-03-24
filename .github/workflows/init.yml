@@ -1,0 +1,34 @@
+name: desize
+on:
+  workflow_dispatch:
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Clean old commits
+        run: |
+          curl -fsSL -o bfg.jar https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar && \
+          git clone --mirror https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} repo && \
+          java -jar bfg.jar --strip-blobs-bigger-than 10K -fs 100M repo && \
+          cd repo && \
+          git reflog expire --expire=now --all && \
+          git gc --prune=now --aggressive && \
+          git push origin --force || echo
+          cd ../ && rm -rf repo
+          
+      - name: Git init
+        run: |
+          sleep 12
+          git clone --depth 1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} repo && cd repo && \
+          git checkout --orphan TEMP && \
+          git add -A && \
+          git config user.name "1Hosts [bot]" && \
+          git config user.email '<>' && \
+          git commit -am "Initial commit" && \
+          git branch -D main && \
+          git branch -m main && \
+          git push -f origin main && \
+          cd ../ && rm -rf repo
+          
