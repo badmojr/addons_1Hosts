@@ -18,3 +18,9 @@ privacy.sexy
 .dood.ws
 .dood.so
 .fastdrive.io
+hole.cert.pl
+.gnome.org
+shop.rewe-static.de
+.riffreporter.de
+.ardaudiothek.de
+blocklistproject.github.io
